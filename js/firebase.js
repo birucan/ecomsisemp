@@ -21,9 +21,9 @@ const register = () => {
   else {
     let user = buildUser(registerForm);
     createUserAuth(user)
-      .then(
+      .then(() =>
         addUserDB(user)
-          .then(showSuccess("Usuario registrado correctamente"))
+          .then(() => showSuccess("Usuario registrado correctamente"))
           .catch((error) => showError(error.message))
       )
       .catch((error) => showError(error.message));
@@ -60,11 +60,11 @@ const loginUser = (email, password) => {
 
 const getToken = () => {
   return sessionStorage.getItem("token");
-}
+};
 
 const setToken = () => {
   return sessionStorage.setItem("token", auth.currentUser.refreshToken);
-}
+};
 
 /* AUXILIAR METHODS */
 
