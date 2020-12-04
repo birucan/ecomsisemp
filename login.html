@@ -12,12 +12,15 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap"
         rel="stylesheet">
 
     <!-- CSS Libraries -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        rel="stylesheet">
     <link href="lib/slick/slick.css" rel="stylesheet">
     <link href="lib/slick/slick-theme.css" rel="stylesheet">
 
@@ -26,31 +29,6 @@
 </head>
 
 <body>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyAmRbcOSmckChB53jbdI_koM0hDXTC1t3Q",
-            authDomain: "sisemp-29c2b.firebaseapp.com",
-            projectId: "sisemp-29c2b",
-            storageBucket: "sisemp-29c2b.appspot.com",
-            messagingSenderId: "736539772810",
-            appId: "1:736539772810:web:4dbbd26be43a01ba522a73",
-            measurementId: "G-5C37DCR1LP"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
-
-
     <!-- Top bar Start -->
     <div class="top-bar">
         <div class="container-fluid">
@@ -73,7 +51,8 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md bg-dark navbar-dark">
                 <a href="#" class="navbar-brand">MENU</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <button type="button" class="navbar-toggler" data-toggle="collapse"
+                    data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -86,17 +65,20 @@
                         <a href="checkout.html" class="nav-item nav-link">Checkout</a>
                         <a href="my-account.html" class="nav-item nav-link">My Account</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">More Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle active"
+                                data-toggle="dropdown">More Pages</a>
                             <div class="dropdown-menu">
                                 <a href="wishlist.html" class="dropdown-item">Wishlist</a>
-                                <a href="login.html" class="dropdown-item active">Login & Register</a>
+                                <a href="login.html" class="dropdown-item active">Login &
+                                    Register</a>
                                 <a href="contact.html" class="dropdown-item">Contact Us</a>
                             </div>
                         </div>
                     </div>
                     <div class="navbar-nav ml-auto">
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User
+                                Account</a>
                             <div class="dropdown-menu">
                                 <a href="#" class="dropdown-item">Login</a>
                                 <a href="#" class="dropdown-item">Register</a>
@@ -160,73 +142,76 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="register-form">
+                    <form id="register-form" class="register-form"
+                        onsubmit="register();return false">
                         <div class="row">
-                            <div class="col-md-6">
-                                <label>First Name</label>
-                                <input class="form-control" type="text" placeholder="First Name">
+                            <div class="form-group col-md-6">
+                                <label for="firstName">First Name</label>
+                                <input name="firstName" id="firstName" class="form-control"
+                                    type="text" placeholder="First Name">
                             </div>
-                            <div class="col-md-6">
-                                <label>Last Name"</label>
-                                <input class="form-control" type="text" placeholder="Last Name">
+                            <div class="form-group col-md-6">
+                                <label for="lastName">Last Name"</label>
+                                <input name="lastName" id="lastName" class="form-control"
+                                    type="text" placeholder="Last Name">
                             </div>
-                            <div class="col-md-6">
-                                <label>E-mail</label>
-                                <input class="form-control" type="text" placeholder="E-mail">
+                            <div class="form-group col-md-6">
+                                <label for="registerEmail">Email</label>
+                                <input name="registerEmail" id="registerEmail " class="form-control"
+                                    type="text" placeholder="Email">
                             </div>
-                            <div class="col-md-6">
-                                <label>Mobile No</label>
-                                <input class="form-control" type="text" placeholder="Mobile No">
+                            <div class="form-group col-md-6">
+                                <label for="mobile">Mobile No</label>
+                                <input name="mobile" id="mobile" class="form-control" type="text"
+                                    placeholder="Mobile No">
                             </div>
-                            <div class="col-md-6">
-                                <label>Password</label>
-                                <input class="form-control" type="text" placeholder="Password">
+                            <div class="form-group col-md-6">
+                                <label for="registerPassword">Password</label>
+                                <input name="registerPassword" id="registerPassword"
+                                    class="form-control" type="password" placeholder="Password">
                             </div>
-                            <div class="col-md-6">
-                                <label>Retype Password</label>
-                                <input class="form-control" type="text" placeholder="Password">
+                            <div class="form-group col-md-6">
+                                <label for="retypePassword">Retype Password</label>
+                                <input name="retypePassword" id="retypePassword"
+                                    class="form-control" type="password" placeholder="Password">
                             </div>
-                            <div class="col-md-12">
-                                <button class="btn">Submit</button>
+                            <div class="form-group col-md-12">
+                                <button type="submit" class="btn">Submit</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-lg-6">
-                    <div class="login-form">
+                    <form id="login-form" class="login-form" onsubmit="login();return false">
                         <div class="row">
                             <div class="col-md-6">
-                                <label>E-mail / Username</label>
-                                <input class="form-control" type="text" placeholder="E-mail / Username" id="email" onclick="signInWithEmailAndPassword">
+                                <label for="email">Email</label>
+                                <input name="email" id="email" class="form-control" type="text"
+                                    placeholder="Email">
                             </div>
                             <div class="col-md-6">
-                                <label>Password</label>
-                                <input class="form-control" type="text" placeholder="Password" id="password">
+                                <label for="password">Password</label>
+                                <input name="password" id="password" class="form-control"
+                                    type="text" placeholder="Password">
                             </div>
                             <div class="col-md-12">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="newaccount">
-                                    <label class="custom-control-label" for="newaccount">Keep me signed in</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button class="btn">Submit</button>
+                                <button type="submit" class="btn">Submit</button>
                             </div>
                         </div>
-                    </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
     <script>
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        /* firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             // ...
-        });
+        }); */
     </script>
     <!-- Login End -->
 
@@ -308,7 +293,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 copyright">
-                    <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                    <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights
+                        Reserved</p>
                 </div>
 
                 <div class="col-md-6 template-by">
@@ -324,12 +310,23 @@
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/slick/slick.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+    <script src="js/firebase.js"></script>
 </body>
 
 </html>
