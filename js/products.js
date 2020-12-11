@@ -14,10 +14,11 @@ var addCart = (id, name, imgUrl, price) => {
   sessionStorage.setItem("cart", JSON.stringify(cart));
   document.querySelector("#cart-length").innerHTML = cart.length;
 };
-const otraCosa =(desc)=>{
+const otraCosa =(desc, name, imgUrl, price)=>{
   console.log("llegue desc "+desc);
   $("#myModal").modal();
-document.querySelector("#modalDesc").innerHTML=desc
+document.querySelector("#modalTit").innerHTML=name
+document.querySelector("#modalDesc").innerHTML='<img src="'+imgUrl+'" alt="Product Image" style="width:100%;"></img>'+desc
 };
 
 
@@ -36,7 +37,7 @@ db.collection("products")
       </a>
       <div class="product-action">
       <a onClick="addCart('${doc.id}','${doc.data().name}', '${doc.data().imgUrl}', '${doc.data().price}')"><i class="fa fa-cart-plus"></i></a>
-      <a id="myBtn" onClick="otraCosa('${doc.data().desc}')"><i class="fa fa-heart"></i></a>
+      <a id="myBtn" onClick="otraCosa('${doc.data().desc}','${doc.data().name}', '${doc.data().imgUrl}', '${doc.data().price}')"><i class="fa fa-heart"></i></a>
       </div>
       </div>
       <div class="product-price">
