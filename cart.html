@@ -149,9 +149,7 @@
                                 <div class="cart-summary">
                                     <div class="cart-content">
                                         <h1>Cart Summary</h1>
-                                        <p>Sub Total<span>$99</span></p>
-                                        <p>Shipping Cost<span>$1</span></p>
-                                        <h2>Grand Total<span>$100</span></h2>
+                                        <h2>Total<span>$<div id="totalPrice"></div></span></h2>
                                     </div>
                                     <div class="cart-btn">
                                         <button>Update Cart</button>
@@ -229,7 +227,9 @@
 
         const printProducts = () => {
             trs = "";
+            total = 0;
             products.forEach(product => {
+                total += product.price * product.quantity;
                 trs += `<tr>
                     <td>
                         <div class="img">
@@ -242,7 +242,7 @@
                     <td>$${product.price * product.quantity}</td>
                     <td><button onclick="remove('${product.id}')"><i class="fa fa-trash"></i></button></td>
                     </tr>`});
-
+            document.querySelector("#totalPrice").innerHTML = total;
             document.querySelector("#list-products").innerHTML = trs;
         }
 
