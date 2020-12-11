@@ -14,6 +14,12 @@ var addCart = (id, name, imgUrl, price) => {
   sessionStorage.setItem("cart", JSON.stringify(cart));
   document.querySelector("#cart-length").innerHTML = cart.length;
 };
+const otraCosa =(desc)=>{
+  console.log("llegue desc "+desc);
+  $("#myModal").modal();
+document.querySelector("#modalDesc").innerHTML=desc
+};
+
 
 db.collection("products")
   .get()
@@ -30,7 +36,7 @@ db.collection("products")
       </a>
       <div class="product-action">
       <a onClick="addCart('${doc.id}','${doc.data().name}', '${doc.data().imgUrl}', '${doc.data().price}')"><i class="fa fa-cart-plus"></i></a>
-      <a onClick="addFavourite('${doc.id}')"><i class="fa fa-heart"></i></a>
+      <a id="myBtn" onClick="otraCosa('${doc.data().desc}')"><i class="fa fa-heart"></i></a>
       </div>
       </div>
       <div class="product-price">
